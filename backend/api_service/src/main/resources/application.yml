@@ -1,0 +1,38 @@
+# DataSource settings
+spring:
+  datasource:
+    url: jdbc:postgresql://postgresqldb:5432/centraldeajuda
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          jdbc:
+            lob:
+              non_contextual_creation: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 943135239009-1d4u4pg0fp5oqtq7i8bk83d8cklg9g73.apps.googleusercontent.com
+            client-secret: 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
+            scope: profile,email
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+security:
+  jwt:
+    secret: fxBXkfsTa3ib+647tAo3JsG4ZT4TwipXMPdLxmSb5mDfxks0foZmmYmtiqSoUBYW
+    expiry: 43200000
