@@ -1,7 +1,6 @@
-# DataSource settings
 spring:
   datasource:
-    url: jdbc:postgresql://postgresqldb:5432/centraldeajuda
+    url: jdbc:postgresql://postgresqldb:5432/helpcenterhub
     username: postgres
     password: admin
   jpa:
