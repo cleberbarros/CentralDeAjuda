@@ -24,7 +24,9 @@ Este projeto está configurado para execução fácil usando Docker e Docker Com
 3. Execute o comando: `docker-compose up --build`.
     - Esse comando construirá as imagens necessárias para o backend, frontend e banco de dados, e iniciará os serviços.
 4. Após a inicialização dos serviços, o frontend estará disponível em `http://localhost:4200` e o backend em `http://localhost:8080`.
-5. A documentação da API pode ser acessada através do Swagger em `http://localhost:8080/swagger-ui.html`.
+
+## Swagger
+A documentação da API está disponível através do Swagger. Você pode acessá-la em `http://localhost:8080/swagger-ui.html` para visualizar e testar as APIs disponíveis.
 
 ## Autenticação
 - Para usuários regulares: A autenticação é realizada através do processo padrão de OAuth2.0 com o Google.
@@ -50,8 +52,3 @@ O pipeline CI/CD, definido no arquivo `.github/workflows/ci.yml`, automatiza o p
 
 ## Comunicação em Tempo Real
 O backend utiliza SSE para enviar atualizações em tempo real ao frontend. Isso é especialmente útil para que os operadores possam acompanhar os chamados em tempo real.
-
-## Swagger
-A documentação da API está disponível através do Swagger. Você pode acessá-la em `http://localhost:8080/swagger-ui.html` para visualizar e testar as APIs disponíveis.
-
-
