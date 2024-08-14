@@ -46,9 +46,6 @@ O pipeline CI/CD, definido no arquivo `.github/workflows/ci.yml`, automatiza o p
    - Compila o código fonte do backend em um arquivo executável `api.jar`.
    - Prepara o frontend para deployment executando o processo de build.
 
-4. **Armazenamento de Artefatos:**
+4. **Armazenamento:**
    - Após o build e testes bem-sucedidos o arquivo `api.jar` é disponível para download no GitHub Actions.
    - O `api.jar` pode ser baixado diretamente da seção de artefatos na página de execução do workflow no GitHub Actions.
-
-## Comunicação em Tempo Real
-O backend utiliza SSE para enviar atualizações em tempo real ao frontend. Isso é especialmente útil para que os operadores possam acompanhar os chamados em tempo real.
