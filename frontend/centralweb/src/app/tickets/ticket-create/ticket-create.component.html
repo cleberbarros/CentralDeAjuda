@@ -1,0 +1,69 @@
+<h2 mat-dialog-title>{{data.id ? 'View Ticket' : 'New Ticket'}}</h2>
+<mat-dialog-content [formGroup]="ticketForm">
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>ID</mat-label>
+    <input matInput [value]="data.id ? data.id : 'N/A'" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>User ID</mat-label>
+    <input matInput [value]="data.userId ? data.userId : 'N/A'" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Subject</mat-label>
+    <textarea matInput formControlName="subject" [disabled]="data.id !== undefined" rows="1" maxlength="254"></textarea>
+    <mat-hint align="end">{{ticketForm.get('subject')?.value?.length ?? 0}} / 254</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" [disabled]="data.id !== undefined" rows="4" maxlength="1023"></textarea>
+    <mat-hint align="end">{{ticketForm.get('description')?.value?.length ?? 0}} / 1023</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width" *ngIf="data.id">
+    <mat-label>Status</mat-label>
+    <input matInput [value]="data.status" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width" *ngIf="data.id">
+    <mat-label>Created At</mat-label>
+    <input matInput [value]="data.createdAt | date: 'medium'" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width" *ngIf="data.id && data.closedAt">
+    <mat-label>Closed At</mat-label>
+    <input matInput [value]="data.closedAt | date: 'medium'" disabled>
+  </mat-form-field>
+
+  <div *ngIf="feedbackReceived" class="rating">
+    <p>Rating</p>
+    <div class="rating-stars">
+      <mat-icon class="rating-star" *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+        {{feedbackReceived.rating > i ? 'star' : 'star_border'}}
+      </mat-icon>
+    </div>
+  </div>
+
+  <mat-form-field appearance="fill" class="full-width" *ngIf="feedbackReceived">
+    <mat-label>Feedback Comment</mat-label>
+    <textarea matInput [value]="feedbackReceived.comment" disabled></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width" *ngIf="feedbackReceived">
+    <mat-label>Feedback Provided At</mat-label>
+    <input matInput [value]="feedbackReceived.createdAt | date: 'medium'" disabled>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions-end">
+  <button mat-button mat-dialog-close>
+    <mat-icon>cancel</mat-icon> Cancel
+  </button>
+  <button mat-button *ngIf="!data.id" (click)="saveTicket()" [disabled]="!ticketForm.valid">
+    <mat-icon>save</mat-icon> Save
+  </button>
+</mat-dialog-actions>

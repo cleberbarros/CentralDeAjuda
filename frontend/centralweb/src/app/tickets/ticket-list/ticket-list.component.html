@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class="toolbar-search">
+  <div class="balance-container"></div>
+
+  <div class="search-container">
+    <mat-form-field appearance="fill" class="search-field">
+      <mat-label>Pesquise por ID ou Assunto</mat-label>
+      <input matInput [(ngModel)]="filter" (keyup)="onFilterChange($event)">
+      <mat-icon color="primary" matSuffix>buscar</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="new-ticket-btn-container">
+    <button mat-raised-button class="new-ticket-btn" (click)="openNewTicketModal()">
+      <mat-icon>add_circle_outline</mat-icon>
+      Novo Ticket
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="ticket-list" *ngIf="tickets.length > 0; else noTickets">
+  <mat-card class="ticket-card" *ngFor="let ticket of tickets" (click)="openTicketDetails(ticket)">
+    <div class="status-label" [ngClass]="{'status-open': ticket.status === 'OPEN', 'status-closed': ticket.status === 'CLOSED'}">
+      {{ ticket.status }}
+    </div>
+    <mat-card-header>
+      <mat-card-title class="cor-fonte">{{ ticket.subject }}</mat-card-title>
+      <mat-card-subtitle class="cor-fonte">Ticket ID: {{ ticket.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ ticket.description }}</p>
+    </mat-card-content>
+    <mat-card-actions class="card-actions-end">
+      <a *ngIf="ticket.status === 'CLOSED' && !ticket.hasFeedback" (click)="openFeedbackModal(ticket); $event.stopPropagation()" class="feedback-link">
+        Provide Feedback<mat-icon>feedback</mat-icon>
+      </a>
+      <button mat-button class="action-btn close-ticket-btn" *ngIf="ticket.status === 'OPEN' && userInfo.roles.includes('MANAGER')" (click)="closeTicket(ticket); $event.stopPropagation()">
+        <mat-icon>lock</mat-icon> Fechar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="pagination">
+  <mat-paginator [length]="totalTickets" [pageSize]="12" [pageSizeOptions]="[8, 12, 24]" (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
+
+<ng-template #noTickets>
+  <h1 class="no-tickets">Você ainda não tem tickets.</h1>
+</ng-template>

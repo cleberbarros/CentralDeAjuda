@@ -1,0 +1,13 @@
+<div class="feedback-container">
+  <h2>Rate Your Experience</h2>
+  <div class="rating">
+    <mat-icon class="rating-star" *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" (click)="rate(i+1)">
+      {{rating > i ? 'star' : 'star_border'}}
+    </mat-icon>
+  </div>
+  <mat-form-field class="comment-box" appearance="outline">
+    <mat-label>Leave a comment (optional)</mat-label>
+    <textarea matInput [(ngModel)]="comment"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="submitFeedback()">Submit</button>
+</div>

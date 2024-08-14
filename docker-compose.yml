@@ -31,7 +31,7 @@ services:
   angular:
     container_name: central-web
     build:
-      context: ./frontend/central-web/
+      context: ./frontend/centralweb/
       dockerfile: Dockerfile
     ports:
       - "4200:4200"

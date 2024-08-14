@@ -1,0 +1,106 @@
+/* Container Styles */
+mat-dialog-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+h2 {
+  color: #1976D2;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Full Width Fields */
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Form Field Styles */
+mat-form-field {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 16px;
+}
+
+/* Hint Styles */
+mat-hint {
+  color: #757575;
+}
+
+/* Button Styles */
+button[mat-button] {
+  background-color: #2196f3;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 8px 16px;
+  border: none;
+}
+
+button[mat-button]:hover {
+  background-color: #1976d2;
+}
+
+/* Cancel Button Styles */
+button[mat-dialog-close] {
+  background-color: #f44336;
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+button[mat-dialog-close]:hover {
+  background-color: #d32f2f;
+}
+
+/* Rating Styles */
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.rating p {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.rating-star {
+  color: gold;
+  cursor: default;
+}
+
+/* Dialog Actions Styles */
+.actions-end {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  mat-dialog-content {
+    padding: 10px;
+  }
+
+  button[mat-button] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="login-wrapper">
+  <mat-card class="login-panel">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="title-container">
+          <mat-icon>lock</mat-icon>
+          <span>Entrar</span>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-raised-button color="primary" class="google-button" (click)="loginWithGoogle()">
+        <img src="assets/google.svg" alt="Google logo">
+        Continuar com Google
+      </button>
+    </mat-card-content>
+    <mat-card-actions>
+      <p class="signup-text">Novo por aqui? <a href="#" (click)="loginWithGoogle(); $event.preventDefault()">Crie uma conta</a></p>
+    </mat-card-actions>
+  </mat-card>
+</div>

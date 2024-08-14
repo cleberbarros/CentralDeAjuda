@@ -1,0 +1,69 @@
+header {
+  background-color: #1e88e5; /* Azul moderno para o header */
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Espaça os elementos nas extremidades */
+  align-items: center;
+  padding: 0 1.5rem; /* Aumentei o padding para dar mais espaço */
+  width: 100%; /* Garantir que o navbar ocupe toda a largura */
+}
+
+.app-title {
+  font-size: 1.8rem; /* Aumentei o tamanho da fonte para maior destaque */
+  font-weight: bold;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espaço maior entre os itens dentro da user-controls */
+  margin-left: auto; /* Empurra user-controls para o extremo direito */
+}
+
+.user-controls p {
+  margin: 0;
+  font-size: 1rem;
+  color: #e0e0e0; /* Cor suave para o texto do usuário */
+}
+
+.nav-button {
+  background-color: #ffffff; /* Cor branca para o botão */
+  color: #1e88e5; /* Azul correspondente ao header */
+  border-radius: 25px; /* Botões mais arredondados */
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: none; /* Remove a capitalização automática */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.nav-button:hover {
+  background-color: #e3f2fd; /* Cor de fundo ao passar o mouse */
+}
+
+.logout-button {
+  background-color: #e53935; /* Vermelho para o botão de logout */
+  color: #fff;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Vermelho escuro ao passar o mouse */
+}
+
+main {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.text-end {
+  text-align: right;
+}
