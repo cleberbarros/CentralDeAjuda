@@ -11,7 +11,10 @@ import firstdecision.util.SseService;
 import firstdecision.util.UserService;
 import java.util.Optional;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
@@ -45,6 +48,10 @@ public class TicketController {
     public ResponseEntity<?> listUserTicketsByFilter(
             @PathVariable Long userId,
             @RequestParam(required = false) String filter,
+            @ParameterObject
+            @Parameter(description = "Paginação e ordenação",
+                    schema = @Schema(implementation = Pageable.class,
+                            example = "{\"page\": 0, \"size\": 1, \"sort\": [\"createdAt,asc\"]}"))
             @PageableDefault Pageable pageable) {
 
         Page<Ticket> tickets = filterTickets.execute(userId, filter, pageable);

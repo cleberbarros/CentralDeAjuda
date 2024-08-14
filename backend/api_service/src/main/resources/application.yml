@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgresqldb:5432/helpcenterhub
+    url: jdbc:postgresql://postgresqldb:5432/centraldeajuda
     username: postgres
     password: admin
   jpa:
