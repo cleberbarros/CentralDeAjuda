@@ -1,7 +1,7 @@
 # Central de Ajuda
 
 ## Sobre o Projeto
-A Central de Ajuda é uma plataforma de suporte criada como resultado de um desafio de desenvolvimento. Através do sistema, os usuários podem fazer login para registrar chamados e avaliar a qualidade do atendimento prestado. Os operadores têm acesso à plataforma para auxiliar os usuários, monitorar as atualizações dos chamados em tempo real e encerrar os atendimentos. Os chamados podem ser visualizados com paginação e filtrados por assunto ou pelo número de identificação (ID).
+A Central de Ajuda é uma plataforma de suporte. Através do sistema, os usuários podem fazer login para registrar chamados e avaliar a qualidade do atendimento prestado. Os operadores têm acesso à plataforma para auxiliar os usuários, monitorar as atualizações dos chamados em tempo real e encerrar os atendimentos. Os chamados podem ser visualizados com paginação e filtrados por assunto ou pelo número de identificação (ID).
 
 ## Tecnologias 
 - **Backend:** Java 17, Spring Boot 3
